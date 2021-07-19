@@ -12,9 +12,14 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 	<body class="is-preload">
+			<!-- Messenger Chat Plugin Code -->
+			<div id="fb-root"></div>
 
+			<!-- Your Chat Plugin code -->
+			<div id="fb-customer-chat" class="fb-customerchat">
+			</div>
 		<!-- Header -->
-			<header id="header">
+		   	<header id="header">
 				<div class="inner">
 					<a href="#" class="image avatar"><img src="images/avatar.jpg" alt="" /></a>
 					<h1><strong>I am Marty</strong>, a full stack<br />
@@ -80,7 +85,7 @@
 				<!-- Three -->
 					<section id="three">
 						<h2>Get In Touch</h2>
-						<p>Accumsan pellentesque commodo blandit enim arcu non at amet id arcu magna. Accumsan orci faucibus id eu lorem semper nunc nisi lorem vulputate lorem neque lorem ipsum dolor.</p>
+						<!-- <p>Accumsan pellentesque commodo blandit enim arcu non at amet id arcu magna. Accumsan orci faucibus id eu lorem semper nunc nisi lorem vulputate lorem neque lorem ipsum dolor.</p> -->
 						<div class="row">
 							<div class="col-8 col-12-small">
 								<form class="contact-form">
@@ -454,6 +459,8 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 				</div>
 			</footer>
 
+			
+
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.poptrox.min.js"></script>
@@ -461,8 +468,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
-	</body>
+				
 	<script>
 		$('.contact-form').on('submit',function(e){
         //optional validation code here
@@ -491,5 +497,25 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
             }
         })
     });
-	</script>
+
+      var chatbox = document.getElementById('fb-customer-chat');
+      chatbox.setAttribute("page_id", "105268987871224");
+      chatbox.setAttribute("attribution", "biz_inbox");
+
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v11.0'
+        });
+      };
+
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script> 
+	</body>
 </html>
